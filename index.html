@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fintech | Conversor Global</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <main class="app-container">
+        <header>
+            <h1><i class="fa-solid fa-globe"></i> NomadPay</h1>
+            <p>Câmbio global em tempo real</p>
+        </header>
+
+        <div class="converter-box">
+            <!-- Grupo do Valor -->
+            <div class="input-group">
+                <label for="amount">Valor a converter</label>
+                <!-- O input agora é o motor principal da conversão -->
+                <input type="number" id="amount" placeholder="Ex: 1500.00" min="0.01" step="0.01">
+                <span id="error-msg" class="error-msg">Insira um valor maior que zero.</span>
+            </div>
+
+            <!-- Seletores de Moeda com Botão de Inversão (Hacker Nível 1) -->
+            <div class="currency-selectors">
+                <div class="select-group">
+                    <label for="from-currency">De (Origem)</label>
+                    <select id="from-currency"></select>
+                </div>
+
+                <button id="swap-btn" class="icon-btn" title="Inverter moedas">
+                    <i class="fa-solid fa-right-left"></i>
+                </button>
+
+                <div class="select-group">
+                    <label for="to-currency">Para (Destino)</label>
+                    <select id="to-currency"></select>
+                </div>
+            </div>
+
+            <!-- Painel de Resultado -->
+            <div id="result-panel" class="result-panel hidden">
+                <p class="result-label">Resultado Claro</p>
+                <h2 id="final-result">R$ 0,00</h2>
+                <p id="rate-info" class="rate-info">1 USD = 5.00 BRL</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
